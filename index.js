@@ -1,8 +1,8 @@
-const inquirer = require ('inquirer')
-const fs = require ('fs')
+const inquirer = require('inquirer')
+const fs = require('fs')
 
-const generateHTML = ({name, linkedIn, bio, project1Title, project1Deploy}) => 
-`<!DOCTYPE html>
+const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy }) =>
+    `<!DOCTYPE html>
 <html>
 
 <head>
@@ -34,7 +34,7 @@ const generateHTML = ({name, linkedIn, bio, project1Title, project1Deploy}) =>
       <h2>About Me</h2>
       <p>${bio}</p>
 
-        <img src="assets/images/IMG_4634 (1).jpg" alt="Doms-Image" class="center">
+        <img src="${headshot}" alt="Doms-Image" class="center">
     </section>
 
 
@@ -85,42 +85,53 @@ const generateHTML = ({name, linkedIn, bio, project1Title, project1Deploy}) =>
 </html>`;
 
 inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your name?',
-    },
-    {
-      type: 'input',
-      name: 'linkedIn',
-      message: 'What is your LinkedIn URL?',
-    },
-    {
-      type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
-    },
-    {
-      type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
-    },
-    {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username',
-    },
-    {
-      type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
-    },
-  ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?',
+        },
+        {
+            type: 'input',
+            name: 'linkedIn',
+            message: 'What is your LinkedIn URL?',
+        },
+        {
+            type: 'input',
+            name: 'bio',
+            message: 'Write a bio for your AboutMe section.',
+        },
+        {
+            type: 'input',
+            name: 'headshot',
+            message: 'What is the src for your headshot image? ie: "assets/images/biopic.png"',
+        },
+        {
+            type: 'input',
+            name: 'project1Title',
+            message: 'What is the title of your first project?',
+        },
+        {
+            type: 'input',
+            name: 'project1Deploy',
+            message: 'What is the deployed url for Project 1?',
+        },
+        {
+            type: 'input',
+            name: 'project1IMG',
+            message: 'What is the src for Project 1 image? ie: "assets/images/project1.png" ',
+        },
+        {
+            type: 'input',
+            name: 'project1Description',
+            message: 'Write a description about Project 1',
+        },
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
+    ])
+    .then((answers) => {
+        const htmlPageContent = generateHTML(answers);
+
+        fs.writeFile('index.html', htmlPageContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created index.html!')
+        );
+    });
