@@ -1,7 +1,7 @@
 const inquirer = require ('inquirer')
 const fs = require ('fs')
 
-const generateHTML = ({}) => 
+const generateHTML = ({name, linkedIn, bio, project1Title, project1Deploy}) => 
 `<!DOCTYPE html>
 <html>
 
@@ -18,12 +18,12 @@ const generateHTML = ({}) =>
 <body>
 
   <header>
-    <h1>Dom Spadafora</h1>
+    <h1>${name}</h1>
   </header>
 
   <nav>
     <a href="#about-me">About Me</a>
-    <a href="https://www.linkedin.com/in/dom-spadafora-81b76480/">Work Experience</a>
+    <a href="${linkedIn}">Work Experience</a>
     <a href="#contact-me">Contact Me</a>
   </nav>
 
@@ -32,12 +32,7 @@ const generateHTML = ({}) =>
 
     <section id="about-me">
       <h2>About Me</h2>
-      <p>
-        Currently I am a Web Developer holding a Bachelor of Arts in Sports Management and a minor Public Relations. I
-        recently earned a certificate in Full Stack Development from the University of Central Florida, where I
-        developed skills in JavaScript, CSS, React.js, responsive web design, and more. As an innovative problem-solver,
-        I enjoy building web applications that will benefit someones everyday life. Please click on my Work Experience
-        link above to learn more about me, or visit some of my recent projects to the right!
+      <p>${bio}</p>
 
         <img src="assets/images/IMG_4634 (1).jpg" alt="Doms-Image" class="center">
     </section>
@@ -46,12 +41,11 @@ const generateHTML = ({}) =>
 
     <div id="work-experience" class="products">
       <section class="card">
-        <header>Travel Assistant</header>
-        <a href="https://domspadafora.github.io/Alt-F404-Travel-Assistant/" target="_blank" rel="noopener noreferrer">
-          <img src="./assets/images/Flight Assistant.PNG" alt="Project-1"></a>
+        <header>${project1Title}</header>
+        <a href="${project1Deploy}" target="_blank" rel="noopener noreferrer">
+          <img src="${project1IMG}" alt="Project-1"></a>
         <footer>
-          <p>This web application allows people to view available AirBnb locations using the information from a plane
-            ticket.</p>
+          <p>${project1Description}</p>
         </footer>
       </section>
       <section class="card">
@@ -89,3 +83,44 @@ const generateHTML = ({}) =>
 </body>
 
 </html>`;
+
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What is your name?',
+    },
+    {
+      type: 'input',
+      name: 'linkedIn',
+      message: 'What is your LinkedIn URL?',
+    },
+    {
+      type: 'input',
+      name: 'hobby',
+      message: 'What is your favorite hobby?',
+    },
+    {
+      type: 'input',
+      name: 'food',
+      message: 'What is your favorite food?',
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Enter your GitHub Username',
+    },
+    {
+      type: 'input',
+      name: 'linkedin',
+      message: 'Enter your LinkedIn URL.',
+    },
+  ])
+  .then((answers) => {
+    const htmlPageContent = generateHTML(answers);
+
+    fs.writeFile('index.html', htmlPageContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created index.html!')
+    );
+  });
