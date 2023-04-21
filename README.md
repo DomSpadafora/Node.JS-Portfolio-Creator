@@ -5,7 +5,7 @@
   ![](./assets/images/readme.PNG)
 
   ## Description
-  If you need to create a quick and simple personal portfolio, this applicatino is for you. Using Node.js and Inquirer, you can create a portofolio by answering the questions through the terminal.
+  If you need to create a quick and simple personal portfolio, this application is for you. Using Node.js and Inquirer, you can create a portofolio by simply answering the questions that are prompted in the terminal. You will need 4 projects to show off in your portfolio! 
 
   ## Table of Contents
   1. [Installation](#installation)
