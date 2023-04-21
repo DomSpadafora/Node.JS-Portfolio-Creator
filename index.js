@@ -1,7 +1,7 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy, project1IMG, project1Description }) =>
+const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy, project1IMG, project1Description, github }) =>
   `<!DOCTYPE html>
     <html>
     
@@ -66,7 +66,7 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
       <footer>
         <a href="${linkedIn}"><img
             src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" className="icon" /></a>
-        <a href="https://github.com/domspadafora"><img src="https://img.icons8.com/color/48/000000/github--v1.png"
+        <a href="${github}"><img src="https://img.icons8.com/color/48/000000/github--v1.png"
             alt="Github" className="icon" /></a>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
@@ -87,6 +87,11 @@ inquirer
       type: 'input',
       name: 'linkedIn',
       message: 'What is your LinkedIn URL?',
+    },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'What is your Github URL?',
     },
     {
       type: 'input',
