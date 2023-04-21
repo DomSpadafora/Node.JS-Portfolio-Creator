@@ -1,8 +1,4 @@
-const inquirer = require('inquirer')
-const fs = require('fs')
-
-const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy, project1IMG, project1Description }) =>
-  `<!DOCTYPE html>
+<!DOCTYPE html>
     <html>
     
     <head>
@@ -20,25 +16,25 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
     
     <body>
     
-      <h1>${name}</h1>
+      <h1>Dom Spadafora</h1>
     
       <main>
     
         <div id="about-me">
           <h2>About Me</h2>
-          <p>${bio}</p>
+          <p>        Currently I am a Web Developer holding a Bachelor of Arts in Sports Management and a minor Public Relations. I</p>
     
-            <img src="${headshot}"  class="headshot">
+            <img src="assets/images/headshot.jpg"  class="headshot">
         </div>
     
     
     
         <div id="work-experience" class="products">
           <section class="card">
-            <h2>${project1Title}</h2>
-            <a href="${project1Deploy}" target="_blank" rel="noopener noreferrer">
-              <img src="${project1IMG}" alt="Project-1"></a>
-            <p>${project1Description}</p>
+            <h2>Flight Assistant</h2>
+            <a href="https://domspadafora.github.io/Alt-F404-Travel-Assistant/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/flightAssistant.PNG" alt="Project-1"></a>
+            <p>flying</p>
           </section>
           
           <section class="card">
@@ -64,7 +60,7 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
     
     
       <footer>
-        <a href="${linkedIn}"><img
+        <a href="https://www.linkedin.com/in/dom-spadafora-81b76480/"><img
             src="https://img.icons8.com/fluent/48/000000/linkedin.png" alt="LinkedIn" className="icon" /></a>
         <a href="https://github.com/domspadafora"><img src="https://img.icons8.com/color/48/000000/github--v1.png"
             alt="Github" className="icon" /></a>
@@ -74,56 +70,4 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
         crossorigin="anonymous"></script>
     </body>
 
-</html>`;
-
-inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your name?',
-    },
-    {
-      type: 'input',
-      name: 'linkedIn',
-      message: 'What is your LinkedIn URL?',
-    },
-    {
-      type: 'input',
-      name: 'bio',
-      message: 'Write a bio for your AboutMe section.',
-    },
-    {
-      type: 'input',
-      name: 'headshot',
-      message: 'What is the src for your headshot image? ie: "assets/images/biopic.png"',
-    },
-    {
-      type: 'input',
-      name: 'project1Title',
-      message: 'What is the title of your first project?',
-    },
-    {
-      type: 'input',
-      name: 'project1Deploy',
-      message: 'What is the deployed url for Project 1?',
-    },
-    {
-      type: 'input',
-      name: 'project1IMG',
-      message: 'What is the src for Project 1 image? ie: "assets/images/project1.png" ',
-    },
-    {
-      type: 'input',
-      name: 'project1Description',
-      message: 'Write a description about Project 1',
-    },
-
-  ])
-  .then((answers) => {
-    const htmlPageContent = generateHTML(answers);
-
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
+</html>

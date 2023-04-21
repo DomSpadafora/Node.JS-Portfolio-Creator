@@ -1,122 +1,147 @@
-* {
-    box-sizing: border-box;
+body{
+  background-image: url(../images/backgroundIMG.jpg);
+  background-size: cover;
+  background-attachment: fixed; 
+  font-family: 'Ubuntu Condensed', sans-serif;
+  padding: 2rem
+  
+
+}
+
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: bolder;
+  margin: 1rem
+}
+
+h2 {
+  text-align: center;
+}
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#about-me {
+  flex: 1;
+  padding: 50px;
+  text-align: center;
+  background-color: #feff9c;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  margin-left: 5rem;
+}
+
+.headshot {
+  margin-top: 5rem;
+  border-radius: 10px;
+}
+
+
+footer {
+  margin: 2rem;
+  text-align: center;
+  
+}
+
+.products {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.card {
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 0 0 400px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background-color: #feff9c;
+  
+}
+
+.card header {
+  padding: 20px;
+}
+
+.card p {
+  text-align: center;
+  
+}
+
+.card img {
+  width: 100%;
+  height: 60%;
+}
+
+
+
+
+
+/* For screens between 768px and 1023px */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  h1 {
+    font-size: 60px;
+    margin: 0.75rem;
   }
-  
-  body {
-    font-family: Arial;
-    margin: 0;
-  }
-  
-  header {
-    padding: 40px;
-    text-align: center;
-    background: #0a668a;
-    color: #fff;
-  }
-  
-  
-  nav {
-    display: flex;
-    background-color: #7fc3d8;
-  }
-  
-  nav a {
-    color: #195d85;
-    padding: 14px 20px;
-    text-decoration: none;
-    text-align: center;
-  }
-  
-  
-  main {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
+
   #about-me {
-    flex: 1;
-    background-color: #195d85;
-    padding: 60px;
-    text-align: center;
+    flex: 1 1 100%;
+    margin: 2rem 0;
   }
-  
-  
-  .center {
-    display:box;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    margin-top: 25%;
+
+  .headshot {
+    margin-top: 2rem;
   }
-  
-  footer {
-    padding: 15px;
-    text-align: center;
-    background: #7fc3d8;
-    color: #fff;
+
+  .card {
+    flex: 0 0 calc(50% - 2rem);
+    margin: 1rem;
   }
-  
-  .products {
-    flex: 4;
-    background-color: #195d85;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 767px) {
+
+  h1 {
+    font-size: 50px;
+    margin: 0.5rem;
+  }
+
+  body {
+    justify-content: center;
+    padding: 0;
+    margin: 1;
+
+  }
+
+  #about-me {
+    margin: 0;
     justify-content: center;
   }
-  
-  .product-1 {
-    position:absolute;
-    flex: 2;
-    display: flex;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-    padding: 10px;
-    flex: 0 0 400px;
-    
+
+
+  .headshot {
+    margin-top: 2rem;
   }
-  
+
   .card {
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 10px;
-    padding: 20px;
-    flex: 0 0 400px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
+    flex: 0 0 100%;
+    margin: 1rem 0;
   }
-  
-  .card header {
-    padding: 20px;
+
+  .products {
+    padding: 2rem;
   }
-  
-  .card p {
-    text-align: center;
-    
-  }
-  
-  .card img {
-    width: 100%;
-    height: 60%;
-  }
-  
-  .contact-me {
-    padding: 10px;
-    font-size: 100px;
-    background-color: #7fc3d8
-  }
-  
-  header li{
-    font-size: 20px;
-    line-height: 1.5
-  }
-  
-  @media screen and (max-width: 768px) {
-    main,
-    nav {
-      flex-direction: column;
-    }
-  }
+}
