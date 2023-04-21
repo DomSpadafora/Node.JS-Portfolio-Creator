@@ -1,7 +1,10 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
 
-const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy, project1IMG, project1Description, github }) =>
+const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1Deploy, project1IMG, project1Description, github,
+  project2Title, project2Deploy, project2IMG, project2Description, project3Title, project3Deploy, project3IMG, project3Description,
+  project4Title, project4Deploy, project4IMG, project4Description, }) =>
+
   `<!DOCTYPE html>
     <html>
     
@@ -42,21 +45,24 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
           </section>
           
           <section class="card">
-            <h2>Nanny's Diary</h2>
-            <a href="https://lit-depths-94534.herokuapp.com/" target="_blank" rel="noopener noreferrer"> <img
-                src="./assets/images/Nannys Diary.PNG" alt="Project-2"></a>
-    
-            <p>Nanny's Diary connects caretakers with parents on a single platform. They are able to interact
-              leaving updates for each other. </p>
-    
+            <h2>${project2Title}</h2>
+            <a href="${project2Deploy}" target="_blank" rel="noopener noreferrer">
+              <img src="${project2IMG}" alt="Project-1"></a>
+            <p>${project2Description}</p>
           </section>
+
           <section class="card">
-            <h2>Project 3</h2>
-            <img src="./assets/images/ComingSoon" alt="Project 3" />
+            <h2>${project3Title}</h2>
+            <a href="${project3Deploy}" target="_blank" rel="noopener noreferrer">
+              <img src="${project3IMG}" alt="Project-1"></a>
+            <p>${project3Description}</p>
           </section>
+
           <section class="card">
-            <h2>Project 4</h2>
-            <img src="./assets/images/ComingSoon" alt="project-4" />
+            <h2>${project4Title}</h2>
+            <a href="${project4Deploy}" target="_blank" rel="noopener noreferrer">
+              <img src="${project4IMG}" alt="Project-1"></a>
+            <p>${project4Description}</p>
           </section>
     
         </div>
@@ -123,6 +129,67 @@ inquirer
       name: 'project1Description',
       message: 'Write a description about Project 1',
     },
+    {
+      type: 'input',
+      name: 'project2Title',
+      message: 'What is the title of your Project 2?',
+    },
+    {
+      type: 'input',
+      name: 'project2Deploy',
+      message: 'What is the deployed url for Project 2?',
+    },
+    {
+      type: 'input',
+      name: 'project2IMG',
+      message: 'What is the src for Project 2 image? ie: "assets/images/project1.png" : ',
+    },
+    {
+      type: 'input',
+      name: 'project2Description',
+      message: 'Write a description about Project 2',
+    },
+    {
+      type: 'input',
+      name: 'project3Title',
+      message: 'What is the title of your Project 3?',
+    },
+    {
+      type: 'input',
+      name: 'project3Deploy',
+      message: 'What is the deployed url for Project 3?',
+    },
+    {
+      type: 'input',
+      name: 'project3IMG',
+      message: 'What is the src for Project 3 image? ie: "assets/images/project1.png" : ',
+    },
+    {
+      type: 'input',
+      name: 'project3Description',
+      message: 'Write a description about Project 3',
+    },
+    {
+      type: 'input',
+      name: 'project4Title',
+      message: 'What is the title of your Project 4?',
+    },
+    {
+      type: 'input',
+      name: 'project4Deploy',
+      message: 'What is the deployed url for Project 4?',
+    },
+    {
+      type: 'input',
+      name: 'project4IMG',
+      message: 'What is the src for Project 4 image? ie: "assets/images/project1.png" : ',
+    },
+    {
+      type: 'input',
+      name: 'project4Description',
+      message: 'Write a description about Project 4',
+    },
+
 
   ])
   .then((answers) => {
