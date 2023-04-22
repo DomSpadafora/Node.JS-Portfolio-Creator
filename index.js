@@ -9,7 +9,7 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
     <html>
     
     <head>
-      <title>Dom's Portfolio</title>
+      <title>Personal Portfolio</title>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
@@ -75,9 +75,12 @@ const generateHTML = ({ name, linkedIn, bio, headshot, project1Title, project1De
         <a href="${github}"><img src="https://img.icons8.com/color/48/000000/github--v1.png"
             alt="Github" className="icon" /></a>
       </footer>
+
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
         integrity="sha384-H1Y76v+NvDxQcVdXUsHhbb7nyu/BzjUw+c+HmZpFOCnVvTgTcfI7zDq+3UvxJ6U1"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+      </script>
+      
     </body>
 
 </html>`;
