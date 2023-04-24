@@ -21,11 +21,11 @@
   ## Usage
   Once the repo has been cloned to your local repository and the dependancies have been installed: 
   
-  First, you will need to add your images to the asset folder that you want to used in your portfolio. This would typically be snapshots of your working applications. You will be asked to source these when prompted in the terminal.
+  First, you will need to add your project photos to the images folder. This would typically be snapshots of your working applications. You will be asked to source these when prompted in the terminal.
 
   Second, open up an integrated terminal and enter `node index.js` in the terminal. Answer the questions when prompted. 
 
-  Last, a new index.html file will be created. Basic css has been created already but you can modify as you wish. 
+  Last, a new index.html file will be created. Basic css has been created already but you can modify as you wish. Have fun and make it your style!  
 
   ## License 
   This project is licensed under the MIT license.
